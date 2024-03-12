@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Project description
+With the rising need for e-commerce websites, I aim to practice creating one using the Wayfair website as the base for faster development. For this particular project, I only build the website for customers and add products directly to the database. 
+
+## Requirements
+- Customers should be able to purchase products using the website. 
+- Customers should be able to check their cart to view all products they buy. 
+- Customers should be able to add, view, remove favorites to keep track of products they want to buy in the future. 
+- Customers should be able to navigate between pages using navbar. 
+- Customers should be able to make payment using Momo. 
