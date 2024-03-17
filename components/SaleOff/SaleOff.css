@@ -1,0 +1,43 @@
+.home-surplus-sale-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home-surplus-sale-container p {
+    color: #934398;
+    font-weight: bold;   
+}
+
+.outerlayer:last-child {
+    margin-right: 0;
+}
+
+.outerlayer {
+    padding: 10px;
+    border-radius: 10px;
+    width: 25%;
+    margin-right: 20px;
+}
+
+.outerlayer:hover {
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a box shadow at the bottom */
+}
+
+.outerlayer p {
+    font-size: 1.5em;
+}
+
+.home-sale-item {
+    background-color: #fff4d6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.saleoffTag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

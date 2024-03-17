@@ -1,0 +1,31 @@
+.home-footer {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.home-footer-item {
+    width: 33%;
+}
+
+.home-footer-item p {
+    font-size: 1.2em;
+}
+
+.icon-desc {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+
+.icon-desc:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-desc p {
+    margin-left: 5px;
+}

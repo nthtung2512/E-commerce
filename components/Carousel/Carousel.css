@@ -1,0 +1,41 @@
+.carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-list {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.carousel-list p {
+    margin: 0;
+    color: purple;
+}
+
+.carousel-outerlayer {
+    min-width: calc(20% - 30px);
+    padding: 10px;
+    margin-right: 10px;
+    height: fit-content;
+}
+
+.carousel-outerlayer:hover {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.carousel-sale-item {
+    background-color: #fff4d6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.carousel-sale-item  p {
+    font-size: 1.2vw;
+    font-weight: bold;
+}

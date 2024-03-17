@@ -1,0 +1,84 @@
+.sideBar-content {
+  width: 20%;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 80px);
+  width: 25%;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  overflow-x: hidden;
+}
+
+.modal.open {
+  display: block;
+}
+
+.sideBar-name, .sideBar-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 5%
+}
+
+.sideBar-item {
+  cursor: pointer;
+}
+
+.sideBar-item:hover, .sidebar-department-item:hover {
+  background-color: #fcf3f6
+}
+
+.sideBar-name p {
+  color: rgb(127, 24, 127);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar-department-item  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 0 10px 5% ;
+  cursor: pointer;
+}
+
+.sidebar-department-item img {
+  margin-right: 15px;
+}
+
+.sideBar-signin {
+  display: flex;
+  position: absolute;
+  left:0;
+  bottom:0;
+  height: 80px;
+  justify-content: center;
+  width: 25%;
+  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 1000;
+}
+
+.sideBar-signin p {
+  border-radius: 20px;
+  background-color: rgb(127, 24, 127);
+  text-align: center;
+  padding: 10px 35%;
+  color: white;
+  font-size: 1.2em;
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+}
+
+.sideBar-signin p:hover {
+  background-color: #934398;
+}

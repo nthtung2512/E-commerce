@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 86%;
+  margin-left: 8vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.normalFlow {
+  height: 100vh;
+  width: 100vw;
+  /* overflow-x: hidden; */
+  display: flex;
+  /* border: 1px solid blue; */
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    flex-direction: row;
+    font-family: "Alegreya", serif;
+    box-sizing: border-box;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
+  }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.img_border {
+    @apply p-2 hover:border-black hover:border-2 hover:rounded-xl;
+}
+
+.modal {
+    @apply fixed top-0 left-0 h-full w-1/4 overflow-y-auto overflow-x-hidden bg-white shadow-custom z-900 block;
+}
+
+.cartModal {
+  @apply fixed top-0 right-0 h-full w-1/4 overflow-y-auto overflow-x-hidden bg-white shadow-custom z-900 block;
+}
+
+
+.sidebar-item {
+    @apply flex items-center flex-row border-b border-black py-3 px-5 cursor-pointer hover:bg-lightPink;
+}
+
+.text-title {
+    @apply text-black font-bold text-lg text-center mt-3 mb-3 w-full
+}
+
+.cart-side-title {
+  @apply text-black font-bold text-2xl mt-3 mb-3 w-full
+}
+
+button[type="submit"] {
+  @apply bg-customPurple
+}
