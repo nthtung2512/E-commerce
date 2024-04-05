@@ -1,7 +1,8 @@
+"use client"
 import React, {useRef, useState} from "react";
-import "./ItemList.css"
-import "../Carousel/Carousel.css"
-import {Link as RouterLink} from "react-router-dom"
+import "@styles/itemList.css"
+import "@styles/globals.css"
+import Link from "next/link";
 import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { Rating } from "@mui/material";
@@ -15,7 +16,7 @@ const ItemList = ({salePickItems}) => {
         const container = document.querySelector('.itemList-list');
         const viewportWidth = window.innerWidth;
     
-        const itemWidthPixels = 0.16 * viewportWidth + 1;  // Corrected
+        const itemWidthPixels = 0.17 * viewportWidth - 1;  // Corrected
         const scrollToX = nextIndex * itemWidthPixels;
     
         container.scrollTo({
@@ -31,7 +32,7 @@ const ItemList = ({salePickItems}) => {
         let prevIndex = Math.max(currentIndex-1,0);
         const container = document.querySelector('.itemList-list');
         const viewportWidth = window.innerWidth;
-        const itemWidthPixels = (0.16 * viewportWidth) + 1
+        const itemWidthPixels = 0.17 * viewportWidth - 1
         const scrollToX = prevIndex * itemWidthPixels;
     
         container.scrollTo({
@@ -58,7 +59,7 @@ const ItemList = ({salePickItems}) => {
                 return (        
                     <div key={index} className="itemList-outerlayer" ref={el => (itemRefs.current[index] = el)}>
                         <div className="itemList-sale-item">
-                        <RouterLink to="/Login">
+                        <Link href="/Login">
                             <img src={item.photoURL} width="100%"/>
                             <p>{item.saleType}</p>
                             <div>
@@ -71,7 +72,7 @@ const ItemList = ({salePickItems}) => {
                               </div>
                               
                             </div>
-                        </RouterLink>
+                        </Link>
                         </div>
                     </div>
                 );

@@ -1,0 +1,31 @@
+.home-surplus-sale-container {
+    @apply flex mt-5 mb-5;
+}
+
+.home-surplus-sale-container p {
+    @apply text-hoverPurple font-bold;
+}
+
+.outerlayer:last-child {
+    @apply mr-0;
+}
+
+.outerlayer {
+    @apply p-3 rounded-xl w-1/4 mr-5;
+}
+
+.outerlayer:hover {
+    @apply border border-black shadow-custom;
+}
+
+.outerlayer p {
+    @apply text-2xl;
+}
+
+.home-sale-item {
+    @apply bg-lightYellow rounded-xl text-center p-5;
+}
+
+.saleoffTag {
+    @apply flex justify-center items-center p-8;
+}

@@ -25,10 +25,10 @@ const DisplayDepartments = ({departments, onClose}) => {
 
 const Sidebar = ({onClose}) => {
   const departments = [
-    {deptImage: "https://assets.wfcdn.com/im/99456963/resize-h80-w80%5Ecompr-r85/2664/266469146/default_name.jpg", deptName: "Sale", deptLink: "/Sale"},
-    {deptImage: "https://assets.wfcdn.com/im/16127459/resize-h80-w80%5Ecompr-r85/1148/114856311/default_name.jpg", deptName: "Furniture", deptLink: "/Furniture"},
-    {deptImage: "https://assets.wfcdn.com/im/88032533/resize-h80-w80%5Ecompr-r85/1148/114856319/default_name.jpg", deptName: "Outdoor", deptLink: "/Outdoor"},
-    {deptImage: "https://assets.wfcdn.com/im/27346711/resize-h80-w80%5Ecompr-r85/5116/51166722/default_name.jpg", deptName: "Bed & Bath", deptLink: "/BeddingBath"},
+    {deptImage: "https://assets.wfcdn.com/im/99456963/resize-h80-w80%5Ecompr-r85/2664/266469146/default_name.jpg", deptName: "Sale", deptLink: "/sale"},
+    {deptImage: "https://assets.wfcdn.com/im/16127459/resize-h80-w80%5Ecompr-r85/1148/114856311/default_name.jpg", deptName: "Furniture", deptLink: "/furniture"},
+    {deptImage: "https://assets.wfcdn.com/im/88032533/resize-h80-w80%5Ecompr-r85/1148/114856319/default_name.jpg", deptName: "Outdoor", deptLink: "/outdoor"},
+    {deptImage: "https://assets.wfcdn.com/im/27346711/resize-h80-w80%5Ecompr-r85/5116/51166722/default_name.jpg", deptName: "Bed & Bath", deptLink: "/beddingBath"},
   ]
 
     return (
@@ -39,7 +39,7 @@ const Sidebar = ({onClose}) => {
       >
         <div className="w-1/5">
         <div className="modal" style={{height: "calc(100vh - 80px)"}}>
-            <div className="sidebar-item">
+            <div className="sidebar-logo">
               <CloseIcon sx={{ color: "black", cursor: "pointer", mr: "10px"}} onClick={onClose} />
               <Logo/>
               

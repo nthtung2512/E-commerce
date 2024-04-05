@@ -108,7 +108,7 @@ const Login = () => {
 
   return (
     <div className="flex w-full min-h-screen max-h-full flex-col" >
-      <div className="flex" style={{width: "80%", marginLeft: "10%", borderBottom: "1px solid black"}}>
+      <div className="flex pt-5 pb-3" style={{width: "80%", marginLeft: "10%", borderBottom: "1px solid black"}}>
         <Logo />
         <p className="flex flex-grow justify-end text-xl">Secure Login</p>
       </div>

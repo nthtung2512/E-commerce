@@ -24,6 +24,7 @@ module.exports = {
         'customPurple': 'rgb(127, 24, 127)',
         'hoverPurple': '#934398',
         'lightPink': '#fcf3f6',
+        'lightYellow': "#fff4d6",
       },
       padding: {
         'signIn':'10px 35%',

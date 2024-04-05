@@ -8,10 +8,9 @@
 
 .itemList-list {
     display: flex;
-    width: 100%;
+    width: 86vw;
     overflow-x: hidden;
     padding: 10px;
-    /* border: 1px solid red; */
 }
 
 .itemList-list p {

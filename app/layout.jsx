@@ -1,5 +1,4 @@
 import "@styles/globals.css";
-
 // import Provider from "@components/Provider";
 import DataProvider from "@components/DataProvider"; 
 import PathProvider from "@components/PathProvider";
@@ -34,17 +33,9 @@ const RootLayout = ({ children }) => {
             
           </Provider> */}
           <PathProvider>
-            {/* <main className='app'>
-              <PathProvider>
-                {showNavbar && <Navbar />}
-              </PathProvider>
-              
-              <div className="content">
-                {children}
-              </div>
-              
-            </main> */}
-            {children}
+            
+          {children}
+            
           </PathProvider>
           
       </body>

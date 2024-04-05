@@ -27,7 +27,7 @@ import {ListItemIcon} from '@mui/material';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
-
+import Logo from './Logo';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -68,7 +68,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const pages = [{linkURL: "./Furniture", pageName:'Furniture'}, {linkURL: "/Outdoor", pageName: 'Outdoor'}, {linkURL: "/BeddingBath", pageName: 'Bedding & Bath'}, {linkURL: "/Sale", pageName: 'Sale'}];
+const pages = [{linkURL: "/furniture", pageName:'Furniture'}, {linkURL: "/outdoor", pageName: 'Outdoor'}, {linkURL: "/beddingBath", pageName: 'Bedding & Bath'}, {linkURL: "/sale", pageName: 'Sale'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -91,7 +91,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white", height: "64px"}}>
+    <AppBar position="static" sx={{ backgroundColor: "white", height: "64px", mt: "68px"}}>
   <Container maxWidth="xl">
     <Toolbar disableGutters>
       <Box
@@ -134,7 +134,7 @@ function ResponsiveAppBar() {
         >
           {pages.map((page, id) => (
             <MenuItem key={id} onClick={handleCloseNavMenu}>
-              <Link href={page.linkURL}>{page.pageName}</Link>
+              <Link target="_self" href={page.linkURL}>{page.pageName}</Link>
             </MenuItem>
           ))}
         </Menu>
@@ -152,7 +152,7 @@ function ResponsiveAppBar() {
         {pages.map((page, id) => (
           <Link 
             href={page.linkURL}
-            target='_blank' 
+            target='_self' 
             rel="noopener noreferrer"
             key={id}
             style={{ margin: '0 4vw', fontSize: '1.2em'}}
@@ -231,13 +231,13 @@ function AccountMenu({haveAccount, setHaveAccount, router}) {
         transformOrigin={{ horizontal: 'center', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}
       >
-        <Link href="/">
+        <Link href="/login">
           <MenuItem sx={{display: haveAccount ? "none" : "flex", ml: "10px", mr: "10px", justifyContent:"center", color: "white", backgroundColor: "rgb(127, 24, 127)", "&:hover": {backgroundColor: "#a05ea6"}, borderRadius: "20px"}}>
             Sign in
           </MenuItem>
         </Link>
         
-        <Link href="/">
+        <Link href="/login">
           <p style={{display: haveAccount ? "none" : "block", textAlign: "center", textDecoration:"underline", fontSize: "1.2em"}}>Create account</p>
         </Link>
         <h2 style={{display: haveAccount ? "block" : "none", margin: "10px 0 10px 20px"}}>Welcome</h2>
@@ -284,7 +284,6 @@ export default function NavBar() {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const [isCartSidebarVisible, setCartSidebarVisible] = useState(false);
   const { haveAccount, setHaveAccount, account, setAccount } = useAppContext();
-  console.log(haveAccount)
   const router = useRouter();
 
   const toggleSidebar = () => {
@@ -353,75 +352,79 @@ export default function NavBar() {
   return (
     <div id="myNavbar" style={{display: "flex", flexDirection:"column"}}>
       <Box sx={{flexGrow: 1}}>
-        <AppBar position="sticky" sx={{backgroundColor:"purple"}}>
-          <Toolbar sx={{ml: "5vw", mr: "5vw"}}>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"  
-              onClick={toggleSidebar} 
-              sx={{ mr: 2}}
-            >
-              <MenuIcon />
-              
-            </IconButton>
-            {isSidebarVisible && <Sidebar onClose={toggleSidebar} />}
-            <Link href="/">
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ display: { xs: 'none', sm: 'block' }, color: "white" }}
-              >
-                Sweethome
-              </Typography>
-            </Link>
-            
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
-            <Box sx={{ flexGrow: 0.95 }} />
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <AccountMenu haveAccount={haveAccount} setHaveAccount={setHaveAccount} router={router}/>
-              
-
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={toggleCartSidebar} 
-                color="inherit"
-                sx={{borderRadius: "0", padding: 0, marginLeft: "30px"}}
-              >
-                <ShoppingCartCheckoutIcon size="large"/>
-                <p style={{fontSize: "0.8em", marginLeft: "10px"}}>Cart</p>
-              </IconButton>
-              {isCartSidebarVisible && <CartSideBar onClose={toggleCartSidebar} />}
-              
-              
-            </Box>
-            <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+        <div className="sticky top-0 z-50 ">
+          <AppBar sx={{backgroundColor:"purple",  height: "68px", display: "flex", justifyContent: "center"}}>
+            <Toolbar sx={{ml: "5vw", mr: "5vw"}}>
               <IconButton
                 size="large"
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
+                edge="start"
                 color="inherit"
+                aria-label="open drawer"  
+                onClick={toggleSidebar} 
+                sx={{ mr: 2}}
               >
-                <MoreIcon />
+                <MenuIcon />
+                
               </IconButton>
-            </Box>
-          </Toolbar>
-        </AppBar>
+              {isSidebarVisible && <Sidebar onClose={toggleSidebar} />}
+              <Link href="/" className='flex items-center'>
+                <img src="/Images/armchair.png" alt="logo" style={{width: "50px", height: "50px"}}/>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{ display: { xs: 'none', sm: 'block' }, color: "white" }}
+                >
+                  Sweethome
+                </Typography>
+              </Link>
+              
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+              <Box sx={{ flexGrow: 0.95 }} />
+              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                <AccountMenu haveAccount={haveAccount} setHaveAccount={setHaveAccount} router={router}/>
+                
+
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={toggleCartSidebar} 
+                  color="inherit"
+                  sx={{borderRadius: "0", padding: 0, marginLeft: "30px"}}
+                >
+                  <ShoppingCartCheckoutIcon size="large"/>
+                  <p style={{fontSize: "0.8em", marginLeft: "10px"}}>Cart</p>
+                </IconButton>
+                {isCartSidebarVisible && <CartSideBar onClose={toggleCartSidebar} />}
+                
+                
+              </Box>
+              <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                <IconButton
+                  size="large"
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </div>
+        
         {renderMobileMenu}
       </Box>
       <ResponsiveAppBar></ResponsiveAppBar>

@@ -1,0 +1,29 @@
+.home-footer {
+    @apply flex pb-12 pt-4;
+}
+
+.home-footer h1 {
+    @apply text-3xl font-bold pb-5;
+}
+
+.home-footer-item {
+    @apply w-1/3;
+}
+
+.home-footer-item p {
+    @apply text-xl;
+}
+
+.icon-desc {
+    @apply flex items-center rounded-3xl cursor-pointer mb-3;
+    padding: 10px 15px;
+    width: fit-content;
+}
+
+.icon-desc:hover {
+    @apply shadow-custom
+}
+
+.icon-desc p {
+    margin-left: 5px;
+}

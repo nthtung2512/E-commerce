@@ -1,0 +1,18 @@
+.sale {
+    @apply flex flex-col mt-8 w-full relative;
+}
+
+.sale-box {
+    @apply text-xl mr-3 rounded-2xl cursor-pointer p-3;
+}
+
+.currentID {
+    @apply text-white bg-customPurple border-customPurple border;
+}
+
+.notCurrentID {
+    color: purple;
+    background-color: white;
+    border: 1px solid black;
+    @apply text-customPurple bg-white border-black border;
+}

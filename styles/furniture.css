@@ -1,0 +1,90 @@
+.furniture {
+    @apply flex flex-col w-full h-full;
+}
+
+.furniture-main-content {
+    @apply flex;
+}
+
+.furniture-sideBar {
+    @apply flex flex-col relative box-border;
+    width: 20vw;
+    padding: 10px 0 10px 3vw; 
+}
+
+.furniture-dropDown {
+    @apply w-full; 
+    margin-top: -2px;
+    padding: 1px;
+}
+
+.furniture-category {
+    height: 300px;
+    overflow-y: scroll;
+    margin-top: 2px;
+}
+
+.furniture-category p {
+    margin: 20px
+}
+
+.furniture-container {
+    width: 80vw;
+    @apply flex flex-wrap h-full mt-3;
+}
+
+.furniture-outerlayer {
+    margin-bottom: 40px;
+    transition: background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.furniture-outerlayer:hover {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #fcf3f6;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+.furniture-item {
+    width: calc(calc(80vw / 3) - 25px);
+    margin: 5px;
+    position: relative;
+    
+}
+
+.furniture-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.saleType {
+    background-color: #990e35;
+    color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 0 10px 0 10px;
+    font-size: 0.9em;
+}
+
+.furniture-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.furniture-filter-item {
+    display: flex;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in;
+}
+
+.furniture-filter-item:hover {
+    background-color: #fcf3f6;
+}

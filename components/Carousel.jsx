@@ -1,4 +1,7 @@
 "use client"
+import "@styles/globals.css";
+import "@styles/carousel.css"
+import "@styles/itemList.css"
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
@@ -16,7 +19,7 @@ const Carousel = ({ fullItems }) => {
         const container = document.querySelector('.carousel-list');
         const viewportWidth = window.innerWidth;
 
-        const itemWidthPixels = 0.16 * viewportWidth;  // Corrected
+        const itemWidthPixels = 0.17 * viewportWidth;  // Corrected
         const scrollToX = nextIndex * itemWidthPixels;
 
         container.scrollTo({
@@ -32,7 +35,7 @@ const Carousel = ({ fullItems }) => {
         let prevIndex = Math.max(currentIndex - 1, 0);
         const container = document.querySelector('.carousel-list');
         const viewportWidth = window.innerWidth;
-        const itemWidthPixels = (0.16 * viewportWidth)
+        const itemWidthPixels = 0.17 * viewportWidth
         const scrollToX = prevIndex * itemWidthPixels;
 
         container.scrollTo({
@@ -45,7 +48,7 @@ const Carousel = ({ fullItems }) => {
     };
 
     return (
-        <div className="carousel relative">
+        <div className="w-full relative flex">
 
             <ArrowCircleLeftOutlinedIcon
                 onClick={handleClickLeft}
@@ -54,17 +57,16 @@ const Carousel = ({ fullItems }) => {
                 className={`absolute top-1/2 left-0 transform -translate-y-1/2 cursor-${currentIndex === 0 ? "not-allowed" : "pointer"} ${currentIndex === 0 ? "text-gray-400" : "text-purple-700"}`}
             />
 
-            <div className="carousel-list flex overflow-x-hidden">
+            <div className="carousel-list">
                 {fullItems.map((item, index) => {
                     return (
-                        <div key={index} className="carousel-outerlayer p-4 rounded-md mr-4 mb-4 hover:border hover:border-black hover:shadow-md">
-                            <div className="carousel-sale-item bg-yellow-200 p-4 text-center rounded-md">
-                            {/* <Link to="/Login"> */}
-                                <Link to="/">
+                        <div key={index} className="carousel-outerlayer">
+                            <div className="carousel-sale-item">
+                                <Link href="/">
                                     <p className="text-purple-700 font-bold">{item.product}</p>
                                     <p>up to</p>
-                                    <div className="saleoffTag">
-                                        <p className="text-5xl">{item.saleoff}%</p>
+                                    <div className="">
+                                        <h1 className="text-8xl text-customPurple font-bold">{item.saleoff}%</h1>
                                     </div>
                                 </Link>
                             </div>

@@ -1,13 +1,8 @@
-.carousel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
 
 .carousel-list {
     display: flex;
-    width: 100%;
+    width: 86vw;
+    /* border: 1px solid red; */
     overflow-x: hidden;
 }
 
@@ -17,10 +12,11 @@
 }
 
 .carousel-outerlayer {
-    min-width: calc(20% - 30px);
+    min-width: calc(20% - 8px);
     padding: 10px;
     margin-right: 10px;
     height: fit-content;
+    margin-top: 20px;
 }
 
 .carousel-outerlayer:hover {
